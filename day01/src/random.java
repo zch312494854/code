@@ -104,9 +104,25 @@ public class random {
     public static int g(){
         return f4()+1;
     }
+
     //首先现将给定条件化成0和1，若偶数可以直接换算，若为奇数则需要将中间的数字重新计算返回。
     //利用01二进制位计算组成得到想要的答案
     //若不在范围内，则重新计算。
 
+    //你只知道，x会以固定概率返回0和1，但是x的内容，你看不到
+    public static int x(){
+        return Math.random()<0.84?0:1;
+    }
+
+    //等概率返回0和1
+    public static int y(){
+        int ans=0;
+        do {
+            ans=x();
+        }while (ans==x());
+        //ans=0 1
+        //ans=1 0
+        return ans;
+    }
 
 }
